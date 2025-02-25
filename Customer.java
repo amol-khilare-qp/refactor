@@ -10,14 +10,13 @@ public class Customer {
 		this.type = type;
 		setDiscount();
 	}
-
+	
 	private void setDiscount() {
-        if (type.equalsIgnoreCase(RefactorConstants.CUSTOMER_TYPE_REGULAR)) {
-            discount = 0.05;
-        } else if (type.equalsIgnoreCase(RefactorConstants.CUSTOMER_TYPE_VIP)) {
-            discount = 0.1;
-        } else if (type.equalsIgnoreCase(RefactorConstants.CUSTOMER_TYPE_PREMIUM)) {
-            discount = 0.2;
-        }
-    }
+	    switch (type.toUpperCase()) {
+	        case RefactorConstants.CUSTOMER_TYPE_REGULAR -> discount = 0.05;
+	        case RefactorConstants.CUSTOMER_TYPE_VIP -> discount = 0.1;
+	        case RefactorConstants.CUSTOMER_TYPE_PREMIUM -> discount = 0.2;
+	        default -> discount = 0.0; 
+	    }
+	}
 }
