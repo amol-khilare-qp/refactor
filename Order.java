@@ -30,7 +30,7 @@ class Order {
 		applyDiscount();
 	}
 
-	public void applyDiscount() {
+	private void applyDiscount() {
 		discountedPrice = totalPrice - (totalPrice * customer.discount);
 	}
 
